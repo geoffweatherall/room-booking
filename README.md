@@ -1,5 +1,5 @@
 # room-booking
-Claude code exploration.
+✦ [Claude Code](https://claude.com/claude-code) exploration.
 
 ## Overview
 
@@ -112,3 +112,5 @@ And what would happen if I just told Claude to do this whole list?
 - [ ] Calendar view per Person
 - [ ] Calendar view per Room
 - [ ] Cancel booking option
+- [ ] Use claude to generate an icon, custome colour scheme, use some Material Design icons to make the webapp look better
+- [ ] An android app.  Super vibe this.  Once webapp is quite mature tell it to make a native Android app with the same look and feel and same business functionality, but idomatically an Android app in convention and design. 
