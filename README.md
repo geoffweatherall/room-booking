@@ -16,7 +16,7 @@ I began this journey as a bit of an AI sceptic, only having had exposure to Micr
 Projects built with Claude for this exploration:
 
 - [room-booking-api](https://github.com/geoffweatherall/room-booking-api) - GraphQL API written using AppSync and Java Lambdas
-- [room-booking-webapp](https://github.com/geoffweatherall/room-booking-webapp - React SPA with Material Design
+- [room-booking-webapp](https://github.com/geoffweatherall/room-booking-webapp) - React SPA with Material Design
  
 
 
