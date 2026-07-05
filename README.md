@@ -6,8 +6,8 @@
 The purpose of this learning project is to understand more about AI assisted development.
 
 I chose a technology stack that I have been working with commercially for a number of years, in which we have never used AI.  I aimed to learn about:
-- the efficiency gains that could be gained using AI
-- changes in daily workflows that occur when using AI.
+- the efficiency gains that can be had using AI
+- changes in development workflows when using AI.
 
 I began this journey as a bit of an AI sceptic, only having had exposure to Microsoft Copilot, which I'd found next to useless.  I chose to try Claude Code as it had lots of hype, and other developers I knew were using it (and it was quite affordable).
 
