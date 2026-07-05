@@ -53,7 +53,7 @@ Commercially I have used IntelliJ since Eclipse went extinct, but for this proje
 
 Throughout the days I've spent on this project, I've built and deployed more code than I could have done in weeks without using Claude.  The code that is written by Claude is still enhanceable and debuggable by a human.  The code is actually better than I've seen many developers write under the time pressure of deadlines.  
 
-I think being a developer helps keep the code in a "good" state because you know what good looks like, and you can instruct Claude to write a test covering
+I think being a developer helps keep the code in a "good" state because you know what good looks like, and you can instruct Claude to write tests covering the sorts of things that typically go wrong.
 
 
 #### Claude will make mistakes.  You need to be a good tester to be a good developer using AI.
@@ -77,6 +77,11 @@ I can just ask Claude to do a number of tasks, e.g.
 ### You don't run out of tokens easily
 
 On the Claude pro plan I can work as I would normally and not run out of tokens.  Even high-level tasks, like adding a new business rule that impacts both the API and the webapp, use only 5% of my half-daily allowance.  By the time I review the changes and manually test things, I'm consuming tokens at the rate I have them available.  I don't have a large code base with all sorts of obscured coupling in the code, but then if you generate code with AI and follow good patterns would you get into this mess anyway?
+
+### Claude is good at understanding the dependencies between projects
+
+I can ask Claude to update my business model, and it will make changes to the GraphQL schema and related API changes, and then sensible changes to the webapp pages as well.  It understands that validation rules in the API impact the webapp, and that validation can be applied in only the API or both API and webapp.  It keeps the business-related logic in the two different projects in sync.  It would be good to see if this holds up across API-webapp-Android.
+
 
 
 ## To Do
@@ -112,5 +117,6 @@ And what would happen if I just told Claude to do this whole list?
 - [ ] Calendar view per Person
 - [ ] Calendar view per Room
 - [ ] Cancel booking option
-- [ ] Use claude to generate an icon, custome colour scheme, use some Material Design icons to make the webapp look better
-- [ ] An android app.  Super vibe this.  Once webapp is quite mature tell it to make a native Android app with the same look and feel and same business functionality, but idomatically an Android app in convention and design. 
+- [ ] Use Claude to generate an icon, custom colour scheme, use some Material Design icons to make the webapp look better
+- [ ] An Android app.  Super vibe this.  Once the webapp is quite mature, tell it to make a native Android app with the same look and feel and same business functionality, but idiomatically an Android app in convention and design. 
+- [ ] Ask Claude to make business functionalty suggestions to improve by project.
