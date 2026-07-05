@@ -68,17 +68,17 @@ Maybe the code base does not need to be treated as sacrosanct as when it was wri
 
 I don't feel ready to totally abandon caring about the source code (i.e. care as little as I do about Java bytecode), but Claude makes keeping the code in pretty good shape nearly a free good.  So, no total vibe coding by a domain expert who has no understanding of software development.  But I think it's better to focus on the quality of the test cases (unit and acceptance), think about the overall direction of the project, and consider concerns like security.
 
-### You don't need to Google Stack Overflow
+#### You don't need to Google Stack Overflow
 
 I can just ask Claude to do a number of tasks, e.g.
 - I'm a terrible speller, just type out my best guesses and get Claude to correct the spelling for me
 - I did not know the markdown for a list of checkboxes off the top of my head.  Rather than googling it, I just ask Claude to add a sample into my document.
 
-### You don't run out of tokens easily
+#### You don't run out of tokens easily
 
 On the Claude pro plan I can work as I would normally and not run out of tokens.  Even high-level tasks, like adding a new business rule that impacts both the API and the webapp, use only 5% of my half-daily allowance.  By the time I review the changes and manually test things, I'm consuming tokens at the rate I have them available.  I don't have a large code base with all sorts of obscured coupling in the code, but then if you generate code with AI and follow good patterns would you get into this mess anyway?
 
-### Claude is good at understanding the dependencies between projects
+#### Claude is good at understanding the dependencies between projects
 
 I can ask Claude to update my business model, and it will make changes to the GraphQL schema and related API changes, and then sensible changes to the webapp pages as well.  It understands that validation rules in the API impact the webapp, and that validation can be applied in only the API or both API and webapp.  It keeps the business-related logic in the two different projects in sync.  It would be good to see if this holds up across API-webapp-Android.
 
