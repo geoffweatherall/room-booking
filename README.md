@@ -112,9 +112,9 @@ And what would happen if I just told Claude to do this whole list?
 - [ ] Support recurring bookings (e.g. a weekly standup) with some of the time slots for rooms already booked, find a room in a schedule
 - [ ] User usage metrics
 - [ ] Have a "find a room" page, which has a list of attendees and finds the smallest available room within a given time window, which might be larger than the length of the meeting
-- [ ] User sign up
+- [x] User sign up
 - [ ] Continue with Google
-- [ ] Password reset, both send reset code and then enter reset code
+- [x] Password reset, both send reset code and then enter reset code
 - [ ] Close user account
 - [ ] Calendar view per Person
 - [ ] Calendar view per Room
