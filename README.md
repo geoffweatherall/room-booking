@@ -104,6 +104,8 @@ Unordered.
 - [ ] Make DynamoDB more efficient - use indexes rather than table scans
 - [ ] Reset button appears in the UI for environments that support it.  Share environment config between the API and the webapp
 - [ ] In a non-prod environment, have a button to first reset and then add useful sample data
+- [ ] Add a DynamoDB GSIs to replace current table scans with more efficient query operations.
+- [ ] (Maybe) add unit tests in the web-app.  Useful if humans will do development, but maybe less so if everything remains vibed?
 
 And what would happen if I just told Claude to do this whole list?
 
