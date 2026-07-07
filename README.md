@@ -94,7 +94,9 @@ Unordered.
 
 - [ ] Move webapp config (api url) from build time to deploy time to page load time.
 - [x] API to check for null and missing
-- [ ] Deploy test and production environments.  
+- [ ] Deploy test and production environments.  Needed before domain purchase.
+- [ ] Project to support domain, Route53.
+- [ ] Project to support terraform remote state resources
 - [ ] Make production deployment configurable to remove the reset API for that env
 - [x] Add authentication with Cognito
 - [ ] Have new users automatically set up as a Person
