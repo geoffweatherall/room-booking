@@ -55,7 +55,7 @@ unlike the logo's fixed colors.
 
 ## Status
 
-Not yet wired up. The webapp still uses MUI's default (unbranded) theme, and the Android app
-doesn't exist as code yet - just an empty repo. Applying this to the webapp (replacing the MUI
-default palette, adding the icon as favicon/header mark) is tracked as future work, not part of
-this commit.
+Wired up in `room-booking-webapp`: the MUI theme's palette is built from the UI tokens above (with
+a light/dark toggle in the app bar, defaulting to the OS preference), `icon.svg` is the favicon, and
+`logo.svg` appears next to the app name in the header. The Android app doesn't exist as code yet -
+just an empty repo - so applying the branding there remains future work.
