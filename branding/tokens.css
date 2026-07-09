@@ -1,0 +1,67 @@
+/*
+ * Room Booking brand tokens.
+ *
+ * Validated palette from the branding exploration (see palette.html). These
+ * are UI tokens for the app's own surfaces, text, and accents - NOT the
+ * logo's fill colors. resources/logo.svg and resources/icon.svg use fixed
+ * hex constants instead of these tokens: a brand mark should render
+ * identically regardless of the surrounding UI's light/dark theme, the same
+ * way most app icons don't recolor themselves when the OS switches theme.
+ *
+ * --color-primary/secondary/accent are the three hues the logo itself is
+ * built from (Ink Violet, Signal Teal, Sunbeam Amber), included here too
+ * since the UI will likely reuse them for buttons, links, and highlights.
+ */
+
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-surface-tile: #f4f1ea;
+  --color-ink: #1e1b2e;
+  --color-ink-soft: #58527a;
+  --color-border: #e7e3f6;
+  --color-primary: #4338ca;
+  --color-secondary: #0e8f82;
+  --color-accent: #f59e0b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #17152a;
+    --color-surface: #201d38;
+    --color-surface-tile: #ece8f7;
+    --color-ink: #f1effa;
+    --color-ink-soft: #b6b0d8;
+    --color-border: #34305a;
+    --color-primary: #8b85f0;
+    --color-secondary: #2dd4bf;
+    --color-accent: #fbbf24;
+  }
+}
+
+/* Explicit theme overrides, for a manual light/dark toggle rather than
+   relying solely on the OS preference - both win over the media query
+   above in their respective direction. */
+:root[data-theme="dark"] {
+  --color-bg: #17152a;
+  --color-surface: #201d38;
+  --color-surface-tile: #ece8f7;
+  --color-ink: #f1effa;
+  --color-ink-soft: #b6b0d8;
+  --color-border: #34305a;
+  --color-primary: #8b85f0;
+  --color-secondary: #2dd4bf;
+  --color-accent: #fbbf24;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-surface-tile: #f4f1ea;
+  --color-ink: #1e1b2e;
+  --color-ink-soft: #58527a;
+  --color-border: #e7e3f6;
+  --color-primary: #4338ca;
+  --color-secondary: #0e8f82;
+  --color-accent: #f59e0b;
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Room Booking — Brand Reference</title>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --surface-tile: #f4f1ea;
+    --ink: #1e1b2e;
+    --ink-soft: #58527a;
+    --border: #e7e3f6;
+    --primary: #4338ca;
+    --secondary: #0e8f82;
+    --accent: #f59e0b;
+    --shadow: 0 1px 2px rgba(30, 27, 46, 0.06), 0 8px 24px rgba(30, 27, 46, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17152a; --surface: #201d38; --surface-tile: #ece8f7;
+      --ink: #f1effa; --ink-soft: #b6b0d8; --border: #34305a;
+      --primary: #8b85f0; --secondary: #2dd4bf; --accent: #fbbf24;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17152a; --surface: #201d38; --surface-tile: #ece8f7;
+    --ink: #f1effa; --ink-soft: #b6b0d8; --border: #34305a;
+    --primary: #8b85f0; --secondary: #2dd4bf; --accent: #fbbf24;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+  :root[data-theme="light"] {
+    --bg: #faf9f6; --surface: #ffffff; --surface-tile: #f4f1ea;
+    --ink: #1e1b2e; --ink-soft: #58527a; --border: #e7e3f6;
+    --primary: #4338ca; --secondary: #0e8f82; --accent: #f59e0b;
+    --shadow: 0 1px 2px rgba(30, 27, 46, 0.06), 0 8px 24px rgba(30, 27, 46, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+  }
+  .page { max-width: 980px; margin: 0 auto; padding: clamp(2rem, 5vw, 4.5rem) 1.5rem 5rem; }
+
+  .eyebrow {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--secondary); margin: 0 0 0.9rem;
+  }
+  h1 {
+    font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.7rem);
+    letter-spacing: -0.02em; text-wrap: balance; margin: 0 0 1rem;
+  }
+  h2 {
+    font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em;
+    margin: 0 0 0.3rem;
+  }
+  .section-note { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 1.4rem; max-width: 62ch; }
+  .intro { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 3rem; }
+
+  section { margin-top: 3.2rem; padding-top: 2.4rem; border-top: 1px solid var(--border); }
+  section:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .hero {
+    display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+  }
+  .hero-mark, .hero-icon {
+    background: var(--surface-tile); border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow);
+  }
+  .hero-mark { width: 200px; height: 200px; }
+  .hero-mark svg { width: 62%; height: 62%; }
+  .hero-icon { width: 96px; height: 96px; border-radius: 21px; overflow: hidden; }
+  .hero-icon svg { width: 100%; height: 100%; display: block; }
+  .hero-copy { flex: 1; min-width: 240px; }
+  .hero-copy p { color: var(--ink-soft); margin: 0.5rem 0 0; max-width: 50ch; }
+  .hero-name { font-weight: 800; font-size: 1.3rem; margin: 0; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+  .swatch { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+  .swatch-chip { width: 56px; height: 56px; border-radius: 12px; border: 1px solid var(--border); }
+  .swatch-label { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 0.75rem; color: var(--ink-soft); }
+  .swatch-name { font-size: 0.82rem; font-weight: 600; }
+
+  .token-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .token-table th, .token-table td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); }
+  .token-table th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); font-weight: 700; }
+  .token-table td.mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; color: var(--ink-soft); }
+  .chip-cell { display: flex; align-items: center; gap: 0.6rem; }
+  .chip { width: 20px; height: 20px; border-radius: 6px; border: 1px solid var(--border); flex-shrink: 0; }
+  .table-wrap { overflow-x: auto; }
+
+  .files { display: flex; flex-direction: column; gap: 0; }
+  .file-row {
+    display: grid; grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--border);
+  }
+  .file-row:last-child { border-bottom: none; }
+  .file-path {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.85rem; color: var(--primary); font-weight: 600;
+  }
+  .file-desc { color: var(--ink-soft); font-size: 0.92rem; }
+
+  .note-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.1rem 1.3rem; color: var(--ink); font-size: 0.92rem; margin-top: 1.2rem;
+  }
+  .note-box strong { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="eyebrow">Brand reference</p>
+  <h1>Room Booking — Calendar Done</h1>
+  <p class="intro">
+    The chosen mark and the palette it's built from, kept here as the source of truth for anyone
+    (human or AI) implementing the brand elsewhere — the webapp restyle and the future Android app
+    both draw from this file and the SVGs in <code>resources/</code>.
+  </p>
+
+  <section>
+    <div class="hero">
+      <div class="hero-mark"><svg viewBox="0 0 240 240">
+        <rect x="75" y="35" width="14" height="34" rx="7" fill="var(--primary)"/>
+        <rect x="151" y="35" width="14" height="34" rx="7" fill="var(--primary)"/>
+        <rect x="40" y="55" width="160" height="150" rx="20" fill="var(--secondary)"/>
+        <path d="M60,55 H180 A20,20 0 0 1 200,75 V99 H40 V75 A20,20 0 0 1 60,55 Z" fill="var(--primary)"/>
+        <circle cx="120" cy="78" r="21" fill="#faf9f6"/>
+        <path d="M110,79 L117,87 L132,68" fill="none" stroke="var(--primary)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="60" y="115" width="26" height="26" rx="6" fill="#faf9f6" opacity="0.55"/>
+        <rect x="107" y="115" width="26" height="26" rx="6" fill="var(--accent)"/>
+        <rect x="154" y="115" width="26" height="26" rx="6" fill="#faf9f6" opacity="0.55"/>
+        <rect x="60" y="151" width="26" height="26" rx="6" fill="#faf9f6" opacity="0.55"/>
+        <rect x="107" y="151" width="26" height="26" rx="6" fill="#faf9f6" opacity="0.55"/>
+        <rect x="154" y="151" width="26" height="26" rx="6" fill="#faf9f6" opacity="0.55"/>
+        <path d="M197,29 L202,42 L215,47 L202,52 L197,65 L192,52 L179,47 L192,42 Z" fill="var(--accent)"/>
+      </svg></div>
+      <div class="hero-copy">
+        <p class="hero-name">Calendar Done</p>
+        <p>
+          A calendar with a plain checkmark badged onto the header — no room imagery, no wordmark
+          yet, just booked-and-confirmed. Flat, rounded, Material-language shapes throughout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Logo colors</h2>
+    <p class="section-note">Fixed hex values used inside <code>resources/logo.svg</code> and <code>resources/icon.svg</code> — constant regardless of the surrounding app's theme.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-chip" style="background:#4338ca;"></div><span class="swatch-name">Ink Violet</span><span class="swatch-label">#4338CA</span></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#0e8f82;"></div><span class="swatch-name">Signal Teal</span><span class="swatch-label">#0E8F82</span></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#f59e0b;"></div><span class="swatch-name">Sunbeam Amber</span><span class="swatch-label">#F59E0B</span></div>
+      <div class="swatch"><div class="swatch-chip" style="background:#faf9f6; border:1px solid var(--border);"></div><span class="swatch-name">Paper</span><span class="swatch-label">#FAF9F6</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>UI tokens</h2>
+    <p class="section-note">For the app's own surfaces, text, and accents — see <code>tokens.css</code>. Light and dark shown side by side.</p>
+    <div class="table-wrap">
+      <table class="token-table">
+        <thead>
+          <tr><th>Token</th><th>Light</th><th>Dark</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">--color-bg</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#faf9f6;"></div>#FAF9F6</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#17152a;"></div>#17152A</div></td></tr>
+          <tr><td class="mono">--color-surface</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#ffffff; border:1px solid var(--border);"></div>#FFFFFF</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#201d38;"></div>#201D38</div></td></tr>
+          <tr><td class="mono">--color-surface-tile</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#f4f1ea;"></div>#F4F1EA</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#ece8f7;"></div>#ECE8F7</div></td></tr>
+          <tr><td class="mono">--color-ink</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#1e1b2e;"></div>#1E1B2E</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#f1effa;"></div>#F1EFFA</div></td></tr>
+          <tr><td class="mono">--color-ink-soft</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#58527a;"></div>#58527A</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#b6b0d8;"></div>#B6B0D8</div></td></tr>
+          <tr><td class="mono">--color-border</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#e7e3f6;"></div>#E7E3F6</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#34305a;"></div>#34305A</div></td></tr>
+          <tr><td class="mono">--color-primary</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#4338ca;"></div>#4338CA</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#8b85f0;"></div>#8B85F0</div></td></tr>
+          <tr><td class="mono">--color-secondary</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#0e8f82;"></div>#0E8F82</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#2dd4bf;"></div>#2DD4BF</div></td></tr>
+          <tr><td class="mono">--color-accent</td>
+            <td><div class="chip-cell"><div class="chip" style="background:#f59e0b;"></div>#F59E0B</div></td>
+            <td><div class="chip-cell"><div class="chip" style="background:#fbbf24;"></div>#FBBF24</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Files in this directory</h2>
+    <div class="files">
+      <div class="file-row"><span class="file-path">resources/logo.svg</span><span class="file-desc">Master mark, transparent background, 240×240 viewBox. The source of truth vector — scales cleanly to any size or resolution.</span></div>
+      <div class="file-row"><span class="file-path">resources/icon.svg</span><span class="file-desc">Same mark on a plain square Paper-colored canvas (no corner rounding baked in), ready to export as PNGs for favicons, app icons, etc. Platform-specific masking (Android adaptive icon, iOS rounded corners) should be applied downstream from this, not re-baked in.</span></div>
+      <div class="file-row"><span class="file-path">tokens.css</span><span class="file-desc">CSS custom properties for the UI token set above, light default + dark via both <code>prefers-color-scheme</code> and a <code>data-theme</code> attribute override.</span></div>
+      <div class="file-row"><span class="file-path">palette.html</span><span class="file-desc">This page.</span></div>
+    </div>
+    <div class="note-box">
+      <strong>Not yet wired up.</strong> The webapp still uses MUI's default (unbranded) theme, and
+      the Android app doesn't exist as code yet. This directory is preparation for both — nothing
+      elsewhere in the codebase references these files yet.
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
