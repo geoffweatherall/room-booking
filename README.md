@@ -59,7 +59,7 @@ I think being a developer helps keep the code in a "good" state because you know
 
 A business rule I added to my project was that you could only book meetings that started and finished on 5-minute boundaries.  Claude initially used browser-native widgets for a time selector for these. When I tested this manually, I found I could select a meeting starting at 10:13am.  Claude thought it had a working solution.  I told Claude there was a bug, described the problem, told it to write a test covering the issue first, and then fix the issue.  Claude was able to work out what was wrong, and come up with a fix.
 
-![Screenshot](resources/Screenshot-2026-07-04-13-11-15.png)
+![Screenshot](resources/claude-solve-a-bug.png)
 
 #### I should vibe more
 
@@ -84,6 +84,12 @@ I can ask Claude to update my business model, and it will make changes to the Gr
 #### Claude is good at giving technical answers and providing options
 
 It can give you estimated AWS costs for your project.  Much easier than using the AWS pages to calculate.  It can take costs into account when designing the code.  I instructed Claude that the project should "scale to zero" and it made choices on AWS components to use to meet this goal.  When it thought there was a slighly better option that would cost a small amount it offered me both options (e.g. in end to end acceptance tests the choice between using Cognito M2M auth vs a dummy user).
+
+Example:
+
+![Cognito token options](resources/technical-design-issue1-a.png)
+![Cognito token followup](resources/technical-design-issue1-b.png)
+
 
 ## To Do
 
