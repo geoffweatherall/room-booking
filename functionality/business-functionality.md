@@ -32,6 +32,7 @@ Going forward, this file is the source of truth for what the system does. New fu
 ## Bookings
 
 - A booking reserves a specific room for a specific block of time, on behalf of an organiser, with an optional list of other attendees.
+- Every booking must have a subject; it cannot be left blank.
 - A room can only be booked for one meeting at a time: the system will not allow a new booking whose time overlaps with an existing booking for the same room. A meeting is allowed to start the instant an earlier meeting in the same room ends.
 - The total number of people at a meeting — the organiser plus all attendees — cannot exceed the room's capacity.
 - A meeting's start and finish times must fall on a five-minute boundary (for example 10:15 or 10:20, but not 10:13), keeping scheduling consistent across the system.
@@ -39,7 +40,6 @@ Going forward, this file is the source of truth for what the system does. New fu
 - Any signed-in user can create a booking and may organise it on behalf of any person in the system, not only themselves.
 - If a booking or room can't be saved because it breaks one or more rules, every problem is reported back at once, so it can be corrected in a single attempt rather than discovered one issue at a time.
 - Once a booking has been made there is currently no way to cancel or change it.
-- A booking does not currently have a title, subject, or description — only a room, organiser, attendees, and time.
 - The system currently assumes all users share the same time zone; meeting times are not converted or adjusted between time zones.
 
 ## Notifications
