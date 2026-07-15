@@ -68,6 +68,7 @@ Going forward, this file is the source of truth for what the system does. New fu
 - Screens that list information show a clear loading indicator while data is being fetched, and a similar indicator while data is being refreshed in the background.
 - Save buttons disable themselves and show a progress indicator while a submission is in progress, preventing accidental duplicate submissions.
 - When something goes wrong — whether a connection problem or a broken business rule — the user sees a clear, dismissible message explaining what happened or what needs to be fixed.
+- Navigation is a vertical menu down the left of the page (Home, Calendar, Availability, then Sign in/Sign up or Sign out, then About and Feedback), always visible on wider screens; on a narrow screen it collapses behind a menu button that opens the same menu as a flyout. Once signed in, the signed-in user's name and a settings shortcut appear at the bottom of the menu.
 
 ## Administration
 
