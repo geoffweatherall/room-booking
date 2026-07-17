@@ -17,15 +17,15 @@ extend later.
 
 | Path | Purpose |
 |---|---|
-| [resources/logo.svg](resources/logo.svg) | Master mark, transparent background, 240×240 viewBox. The source of truth vector - scales cleanly to any size or resolution. Colors are hardcoded hex (not CSS variables), since standalone SVG tooling won't resolve custom properties. |
-| [resources/icon.svg](resources/icon.svg) | Same mark on a plain square Paper-colored canvas, no corner rounding baked in. Ready to export as PNGs at any resolution for favicons, app icons, etc. Platform-specific masking (Android adaptive icon foreground/background split, iOS's own corner rounding) should be derived from this or from `logo.svg` when that work happens, not re-baked into this file. |
+| [resources/logo.svg](resources/logo.svg) | Master mark, transparent background, 240×240 viewBox. The source of truth vector - scales cleanly to any size or resolution. Colours are hardcoded hex (not CSS variables), since standalone SVG tooling won't resolve custom properties. |
+| [resources/icon.svg](resources/icon.svg) | Same mark on a plain square Paper-coloured canvas, no corner rounding baked in. Ready to export as PNGs at any resolution for favicons, app icons, etc. Platform-specific masking (Android adaptive icon foreground/background split, iOS's own corner rounding) should be derived from this or from `logo.svg` when that work happens, not re-baked into this file. |
 | [tokens.css](tokens.css) | CSS custom properties for the UI token set below - light default, dark via `prefers-color-scheme` and via a `data-theme` attribute override. |
 | [palette.html](palette.html) | Standalone, self-contained HTML page for visually reviewing the logo and full palette in a browser. |
 
-## Logo colors
+## Logo colours
 
 Fixed hex values used inside the mark itself - constant regardless of the surrounding app's
-theme, the same way most app icons don't recolor when the OS switches theme.
+theme, the same way most app icons don't recolour when the OS switches theme.
 
 | Name | Hex |
 |---|---|
@@ -39,7 +39,7 @@ theme, the same way most app icons don't recolor when the OS switches theme.
 For the app's own surfaces, text, and accents (see `tokens.css`). `--color-primary`,
 `--color-secondary`, and `--color-accent` are the same three logo hues above, reused for the
 app's own buttons/links/highlights; they shift to lighter variants in dark mode for contrast,
-unlike the logo's fixed colors.
+unlike the logo's fixed colours.
 
 | Token | Light | Dark |
 |---|---|---|
