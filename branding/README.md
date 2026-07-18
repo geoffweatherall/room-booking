@@ -1,7 +1,7 @@
 # Branding
 
-Brand assets for the room-booking project family (`room-booking-webapp`, and the future
-`room-booking-android`). This is prep material — nothing outside this directory references
+Brand assets for the mootmaker project family (`mootmaker-webapp`, and the future
+`mootmaker-android`). This is prep material — nothing outside this directory references
 these files yet. See [palette.html](palette.html) for a human-viewable version of everything
 below, including the logo rendered at size.
 
@@ -55,7 +55,7 @@ unlike the logo's fixed colours.
 
 ## Status
 
-Wired up in `room-booking-webapp`: the MUI theme's palette is built from the UI tokens above (with
+Wired up in `mootmaker-webapp`: the MUI theme's palette is built from the UI tokens above (with
 a light/dark toggle in the app bar, defaulting to the OS preference), `icon.svg` is the favicon, and
 `logo.svg` appears next to the app name in the header. The Android app doesn't exist as code yet -
 just an empty repo - so applying the branding there remains future work.

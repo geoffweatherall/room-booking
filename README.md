@@ -1,4 +1,4 @@
-# room-booking
+# mootmaker
 ✦ [Claude Code](https://claude.com/claude-code) exploration.
 
 ## Overview
@@ -15,10 +15,10 @@ I began this journey as a bit of an AI sceptic, only having had exposure to Micr
 
 Projects built with Claude for this exploration:
 
-- [room-booking-api](https://github.com/geoffweatherall/room-booking-api) - GraphQL API written using AppSync and Java Lambdas
-- [room-booking-webapp](https://github.com/geoffweatherall/room-booking-webapp) - React SPA with Material Design
-- [room-booking-bootstrap-terraform](https://github.com/geoffweatherall/room-booking-bootstrap-terraform) - Creates the shared S3 bucket used for Terraform remote state by the other projects
-- [room-booking-tools](https://github.com/geoffweatherall/room-booking-tools) - Admin/support tools (e.g. a sample data generator) run locally against a deployed environment
+- [mootmaker-api](https://github.com/geoffweatherall/mootmaker-api) - GraphQL API written using AppSync and Java Lambdas
+- [mootmaker-webapp](https://github.com/geoffweatherall/mootmaker-webapp) - React SPA with Material Design
+- [mootmaker-bootstrap-terraform](https://github.com/geoffweatherall/mootmaker-bootstrap-terraform) - Creates the shared S3 bucket used for Terraform remote state by the other projects
+- [mootmaker-tools](https://github.com/geoffweatherall/mootmaker-tools) - Admin/support tools (e.g. a sample data generator) run locally against a deployed environment
 
 ## Learnings
 
@@ -155,7 +155,7 @@ And what would happen if I just told Claude to do this whole list?
 
 ### Business Functionality
 
-- [ ] Support recurring bookings (e.g. a weekly standup)
+- [ ] Support recurring meetings (e.g. a weekly standup)
 - [ ] Find a room in a schedule, even when some of the room's time slots are already booked
 - [ ] User usage metrics
 - [ ] Have a "find a room" page, which has a list of attendees and finds the smallest available room within a given time window, which might be larger than the length of the meeting
@@ -165,7 +165,7 @@ And what would happen if I just told Claude to do this whole list?
 - [ ] Close user account
 - [ ] Calendar view per Person
 - [ ] Calendar view per Room
-- [ ] Cancel booking option
+- [ ] Cancel meeting option
 - [ ] Use Claude to generate an icon and a custom colour scheme, and use some Material Design icons to make the webapp look better
 - [ ] An Android app.  Super vibe this.  Once the webapp is quite mature, tell it to make a native Android app with the same look and feel and same business functionality, but idiomatically an Android app in convention and design. 
 - [ ] Ask Claude to make business functionality suggestions to improve the project.
@@ -176,7 +176,7 @@ And what would happen if I just told Claude to do this whole list?
 
 Multiple independent copies of the stack (API + webapp) can run in the same AWS account at once, each identified by an arbitrary **environment** name — `test`, `production`, or a developer's own name for a personal sandbox (e.g. `bob`). There's no fixed list of environments to register anywhere; the name is just an argument passed to each project's scripts. Every environment gets:
 
-- its own Terraform state, held in the shared bucket created by [room-booking-bootstrap-terraform](https://github.com/geoffweatherall/room-booking-bootstrap-terraform), and
+- its own Terraform state, held in the shared bucket created by [mootmaker-bootstrap-terraform](https://github.com/geoffweatherall/mootmaker-bootstrap-terraform), and
 - its own uniquely-named AWS resources (Lambdas, DynamoDB tables, Cognito user pool, S3 bucket, CloudFront distribution, etc.),
 
 so environments can be created and destroyed independently without touching each other.
@@ -184,33 +184,33 @@ so environments can be created and destroyed independently without touching each
 ### Tricky issues and how they're solved
 
 - **AWS resource names would collide across environments.** Every resource name used to derive from a single `project_name` variable, which is fine with one deployment but would clash the moment `test` and `production` (or `bob`) tried to create identically-named Lambdas/tables/etc. in the same account. Fix: each project computes a `resource_prefix = "<environment>-<project_name>"` local and names every resource from that instead.
-- **Terraform state needs to be per-environment, in one shared bucket.** The state key now includes the environment: `<environment>/<project-name>/terraform.tfstate` (e.g. `test/room-booking-api/terraform.tfstate`). The bucket/region/locking config stays static in a checked-in `backend.hcl`, but the `key` is supplied at `terraform init` time by each script, computed from the environment argument — so any environment name works without editing any file.
+- **Terraform state needs to be per-environment, in one shared bucket.** The state key now includes the environment: `<environment>/<project-name>/terraform.tfstate` (e.g. `test/mootmaker-api/terraform.tfstate`). The bucket/region/locking config stays static in a checked-in `backend.hcl`, but the `key` is supplied at `terraform init` time by each script, computed from the environment argument — so any environment name works without editing any file.
 - **Switching environments in the same checkout could corrupt Terraform's local cache.** Terraform records which backend it's configured for in a local `.terraform/` directory; reusing that between environments (or running two environments concurrently from one checkout) risked one clobbering the other's cached config. Fix: each script sets `TF_DATA_DIR` to a per-environment directory (`.terraform-<environment>/`), so each environment's local metadata is fully isolated.
 - **The webapp needs values (Cognito ids, GraphQL URL) from the API's deployment, per environment.** `authenticate.sh` now takes the environment name as an argument and re-initialises itself against that environment's state before reading outputs, so it always reads the right environment's values. The webapp's `deploy.sh` takes the same environment name and passes it straight through to `authenticate.sh`, so an API and webapp deployed with the same environment name are automatically wired together.
 - **Accidentally deploying to the wrong place.** There's no default environment — every script requires the name to be passed explicitly, and validates it against a safe character set (lowercase letters, digits, hyphens) since it ends up embedded in AWS resource names and S3 state keys. `undeploy.sh` also still requires interactive confirmation (no `-auto-approve`), regardless of environment.
 
 ## Overall How-to: set up, test, and tear down your own environment
 
-Prerequisites: the shared state bucket already exists (one-time setup, see [room-booking-bootstrap-terraform](https://github.com/geoffweatherall/room-booking-bootstrap-terraform)'s README), and you have `room-booking-api` and `room-booking-webapp` checked out as sibling directories.
+Prerequisites: the shared state bucket already exists (one-time setup, see [mootmaker-bootstrap-terraform](https://github.com/geoffweatherall/mootmaker-bootstrap-terraform)'s README), and you have `mootmaker-api` and `mootmaker-webapp` checked out as sibling directories.
 
 Pick a name nobody else is using — your own name works well (this example uses `bob`):
 
 ```bash
 # 1. Deploy the API
-cd room-booking-api
+cd mootmaker-api
 ./deploy.sh bob
 
 # 2. Try it out / run the acceptance tests against your environment
 ./verify.sh bob
 
 # 3. Deploy the webapp, pointed at the same environment's API
-cd ../room-booking-webapp
+cd ../mootmaker-webapp
 ./deploy.sh bob
 # prints a site URL - open it and try the app for real
 
 # 4. When you're done, tear both down (order doesn't matter)
 ./undeploy.sh bob
-cd ../room-booking-api
+cd ../mootmaker-api
 ./undeploy.sh bob
 ```
 
