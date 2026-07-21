@@ -139,7 +139,6 @@ Unordered.
 - [x] Deploy test and production environments.  Needed before domain purchase.
 - [ ] Project to support domain, Route53.
 - [x] Project to support Terraform remote state resources
-- [ ] Make production deployment configurable to remove the reset API for that env
 - [x] Add authentication with Cognito
 - [ ] Have new users automatically set up as a Person
 - [x] Add a bootstrap project for Terraform resources
