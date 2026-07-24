@@ -5,13 +5,14 @@ Brand assets for the mootmaker project family (`mootmaker-webapp`, and the futur
 these files yet. See [palette.html](palette.html) for a human-viewable version of everything
 below, including the logo rendered at size.
 
-## The mark: Calendar Done
+## The mark: Meeting Booked
 
-A calendar with a plain checkmark badged onto the header — no room imagery, no wordmark yet,
-just booked-and-confirmed. Flat, rounded, Material-language shapes. Chosen from a wider
-exploration (a door motif, a two-chairs-at-a-table room scene, and a bolder booked-slot-bar
-variant were the other finalists) for being the cleanest at small sizes and the least fussy to
-extend later.
+A calendar with two overlapping circles badged onto the header, standing in for the two people
+about to meet - the same "overlapping avatars" motif used across the industry for
+participants/attendees, so the badge reads as *a meeting*, not just *a task done*. Flat, rounded,
+Material-language shapes throughout, same container silhouette as the original "Calendar Done"
+mark (a calendar with binder rings, a coloured header, and a slot grid) so the refresh reads as
+an evolution rather than a different app.
 
 ## Files
 
@@ -59,3 +60,9 @@ Wired up in `mootmaker-webapp`: the MUI theme's palette is built from the UI tok
 a light/dark toggle in the app bar, defaulting to the OS preference), `icon.svg` is the favicon, and
 `logo.svg` appears next to the app name in the header. The Android app doesn't exist as code yet -
 just an empty repo - so applying the branding there remains future work.
+
+The webapp's own sidebar/account icons (`mootmaker-webapp/webapp/src/icons/`) are also custom
+flat-shape glyphs built to sit alongside this mark, rather than stock Material icons - see that
+directory's own doc comment. The home page's hero illustration
+(`mootmaker-webapp/webapp/src/assets/home-hero.svg`) reuses the same four-colour palette in the
+same flat, rounded, no-gradient style.
