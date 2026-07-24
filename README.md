@@ -127,7 +127,11 @@ What becomes the primary source definition for what the tests need to cover, par
 
 Claude is not like a junior software engineer, it's like a very senior software engineer.  You can learn a new area of technology by using Claude to build an example, and asking Claude to explain what it's done and why.  This might be more powerful than following a tutorial you find on the internet.
 
+### Use Claude to verify your understanding
 
+It's worth entering your understanding of a solution or the way tools work, as it can give you feedback on what you have exactly right, and where there are gaps in your understanding.
+
+![Claude helps you understand](resources/ask-claude-to-check-your-understanding.png)
 
 ## To Do
 
